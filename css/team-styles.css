@@ -1,0 +1,184 @@
+/* Team Section Styles */
+.team-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Single leader styling */
+.single-leader {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: left;
+}
+
+.team-member-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.team-member p {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.team-bio {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Expertise badges */
+.expertise-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 30px;
+}
+
+.badge {
+    background-color: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.badge i {
+    font-size: 1rem;
+}
+
+/* Key achievements section */
+.key-achievements, .expertise-areas, .leadership-skills {
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(var(--primary-rgb), 0.05);
+}
+
+.key-achievements h4, .expertise-areas h4, .leadership-skills h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.key-achievements ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.key-achievements li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.key-achievements li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.expertise-areas p, .leadership-skills p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.team-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.team-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.team-social a:hover {
+    background-color: var(--accent-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .single-leader {
+        padding: 20px;
+    }
+    
+    .expertise-badges {
+        justify-content: center;
+    }
+    
+    .team-member-image {
+        width: 150px;
+        height: 150px;
+    }
+}
