@@ -15,8 +15,8 @@
     --transition: all 0.3s ease;
     --gradient-1: #00a651;
     --gradient-2: #00d967;
-    --gradient-3: #ff6b00;
-    --gradient-4: #ffb700;
+    --gradient-3: #ff9e66; /* Softened orange */
+    --gradient-4: #ffd066; /* Softened yellow */
 }
 
 * {
@@ -189,6 +189,7 @@ header {
     padding: 100px 1rem 0;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 /* Floating Icons */
@@ -1225,6 +1226,8 @@ textarea.form-control {
 @media screen and (max-width: 768px) {
     .navbar {
         padding: 1rem;
+        position: relative;
+        z-index: 1000;
     }
     
     .nav-toggle {
@@ -1260,6 +1263,10 @@ textarea.form-control {
     .hero-buttons {
         flex-direction: column;
         gap: 1rem;
+        margin-top: 2rem;
+        display: flex;
+        width: 100%;
+        justify-content: center;
     }
     
     .footer-container {
