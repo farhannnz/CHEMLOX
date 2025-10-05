@@ -7,6 +7,59 @@ document.addEventListener('DOMContentLoaded', function() {
         once: true,
         mirror: false
     });
+    
+    // PDF Modal Functionality
+    const pdfModal = document.getElementById('pdfModal');
+    const pdfViewer = document.getElementById('pdfViewer');
+    const closeModal = document.querySelector('.close-modal');
+    
+    // Form A2 Card
+    const formA2Card = document.getElementById('formA2Card');
+    if (formA2Card) {
+        formA2Card.addEventListener('click', function() {
+            pdfViewer.src = './pdfs/FERT-M-250225_19082025172817.pdf';
+            pdfModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Form F Card
+    const formFCard = document.getElementById('formFCard');
+    if (formFCard) {
+        formFCard.addEventListener('click', function() {
+            pdfViewer.src = './pdfs/FERT-M-250229_12082025111623.pdf';
+            pdfModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Form O Card
+    const formOCard = document.getElementById('formOCard');
+    if (formOCard) {
+        formOCard.addEventListener('click', function() {
+            pdfViewer.src = './pdfs/Chemlox Organics Form O Fnl.pdf';
+            pdfModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Close Modal
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            pdfModal.style.display = 'none';
+            pdfViewer.src = '';
+            document.body.style.overflow = '';
+        });
+    }
+    
+    // Close Modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === pdfModal) {
+            pdfModal.style.display = 'none';
+            pdfViewer.src = '';
+            document.body.style.overflow = '';
+        }
+    });
 
     // Mobile Navigation Toggle
     const navToggle = document.getElementById('navToggle');

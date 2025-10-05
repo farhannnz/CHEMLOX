@@ -70,12 +70,12 @@
 
 .hero-logo {
     margin-bottom: 1.5rem;
-    animation: float 6s ease-in-out infinite;
 }
 
 .hero-logo img {
-    max-width: 120px;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    max-width: 160px; /* Increased size */
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Stronger shadow to make it pop */
 }
 
 .hero h1 {
@@ -175,17 +175,7 @@
     }
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
+/* Animation removed */
 
 @keyframes glow {
     from {
