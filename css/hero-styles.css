@@ -73,13 +73,14 @@
 }
 
 .hero-logo img {
-    max-width: 160px; /* Increased size */
+    max-width: 180px; /* Increased size */
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Stronger shadow to make it pop */
+    margin-top: 15px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 2.7rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: #ffffff;
