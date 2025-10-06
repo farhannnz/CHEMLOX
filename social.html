@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
         .social-hero {
-            background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #0066ff, #ff3d00, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradient-animation 10s ease infinite;
             height: 400px;
             position: relative;
             display: flex;
@@ -20,6 +20,19 @@
             justify-content: center;
             color: white;
             text-align: center;
+            overflow: hidden;
+        }
+        
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         
         .social-hero::before {
@@ -29,7 +42,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.3);
         }
         
         .social-hero-content {
@@ -70,7 +83,7 @@
             color: #333;
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
         
         .section-title h2::after {
@@ -81,7 +94,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: #4CAF50;
+            background: linear-gradient(90deg, #0066ff, #ff3d00);
         }
         
         .initiatives-grid {
@@ -164,36 +177,41 @@
         }
         
         .social-media-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #4CAF50;
-        }
-        
-        .social-media-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        .social-media-card p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        
-        .social-media-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-        
-        .social-media-btn:hover {
-            background-color: #388E3C;
-        }
+             font-size: 3rem;
+             margin-bottom: 20px;
+             background: linear-gradient(135deg, #0066ff, #ff3d00);
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+         }
+         
+         .social-media-card h3 {
+             font-size: 1.5rem;
+             margin-bottom: 15px;
+             color: #333;
+         }
+         
+         .social-media-card p {
+             color: #666;
+             margin-bottom: 20px;
+         }
+         
+         .social-media-btn {
+             display: inline-block;
+             padding: 10px 20px;
+             background: linear-gradient(90deg, #0066ff, #ff3d00);
+             color: white;
+             text-decoration: none;
+             border-radius: 5px;
+             font-weight: 500;
+             transition: all 0.3s ease;
+             box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+         }
+         
+         .social-media-btn:hover {
+             background: linear-gradient(90deg, #ff3d00, #0066ff);
+             transform: translateY(-3px);
+             box-shadow: 0 6px 20px rgba(255, 61, 0, 0.4);
+         }
         
         .testimonial-section {
             padding: 80px 0;

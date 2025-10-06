@@ -1428,3 +1428,8 @@ textarea.form-control {
         justify-content: center;
     }
 }
+
+.page-header{
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+
+}
