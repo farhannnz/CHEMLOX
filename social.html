@@ -1,4 +1,458 @@
-<!-- Footer -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Initiatives - Chemlox Organics Private Limited</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        .social-hero {
+            background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .social-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .social-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .social-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .social-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .social-section {
+            padding: 80px 0;
+        }
+        
+        .social-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #333;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #4CAF50;
+        }
+        
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .initiative-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .initiative-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .initiative-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .initiative-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .initiative-card:hover .initiative-img img {
+            transform: scale(1.1);
+        }
+        
+        .initiative-content {
+            padding: 25px;
+        }
+        
+        .initiative-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .initiative-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .social-media-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .social-media-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .social-media-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-media-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-media-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        
+        .social-media-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .social-media-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .social-media-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-media-btn:hover {
+            background-color: #388E3C;
+        }
+        
+        .testimonial-section {
+            padding: 80px 0;
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .testimonial {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '\201C';
+            font-size: 80px;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: #4CAF50;
+            opacity: 0.2;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .social-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .social-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .initiatives-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-media-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-media-card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="download.png" alt="Chemlox Organics Private Limited Logo">
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="social.html" class="active">Social</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="social-hero">
+        <div class="social-hero-content">
+            <h1>Our Social Initiatives</h1>
+            <p>At Chemlox Organics, we believe in giving back to society and making a positive impact on the communities we serve.</p>
+        </div>
+    </section>
+
+    <!-- Social Responsibility Section -->
+    <section class="social-section">
+        <div class="social-container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Corporate Social Responsibility</h2>
+                <p>Our commitment to sustainable agriculture extends beyond business to social welfare</p>
+            </div>
+            
+            <div class="initiatives-grid">
+                <div class="initiative-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="initiative-img">
+                        <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Farmer Education">
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Farmer Education Programs</h3>
+                        <p>We conduct regular training sessions for farmers to educate them about sustainable farming practices, proper use of agricultural inputs, and modern techniques to improve crop yield.</p>
+                    </div>
+                </div>
+                
+                <div class="initiative-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="initiative-img">
+                        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Rural Development">
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Rural Development</h3>
+                        <p>Our rural development initiatives focus on improving infrastructure, providing clean water, and supporting education in farming communities across India.</p>
+                    </div>
+                </div>
+                
+                <div class="initiative-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="initiative-img">
+                        <img src="https://images.unsplash.com/photo-1611735341450-74d61e660ad2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Environmental Conservation">
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Environmental Conservation</h3>
+                        <p>We actively participate in tree plantation drives, promote organic farming, and develop eco-friendly agricultural products to protect our environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media-section">
+        <div class="social-container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Connect With Us</h2>
+                <p>Follow us on social media to stay updated with our latest initiatives and activities</p>
+            </div>
+            
+            <div class="social-media-container">
+                <div class="social-media-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="social-media-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>Follow our Facebook page for regular updates and engaging content.</p>
+                    <a href="#" class="social-media-btn">Follow Us</a>
+                </div>
+                
+                <div class="social-media-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="social-media-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Check out our Instagram for visual stories and behind-the-scenes glimpses.</p>
+                    <a href="#" class="social-media-btn">Follow Us</a>
+                </div>
+                
+                <div class="social-media-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="social-media-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with us professionally and stay updated with industry insights.</p>
+                    <a href="#" class="social-media-btn">Connect</a>
+                </div>
+                
+                <div class="social-media-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="social-media-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>YouTube</h3>
+                    <p>Watch our educational videos, product demonstrations, and success stories.</p>
+                    <a href="#" class="social-media-btn">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="social-container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Impact Stories</h2>
+                <p>Hear from the communities and individuals we've helped</p>
+            </div>
+            
+            <div class="testimonial-container">
+                <div class="testimonial" data-aos="fade-up">
+                    <p class="testimonial-content">"The farmer education program by Chemlox Organics has transformed my farming practices. I've seen a 40% increase in crop yield while using fewer chemical inputs. Their sustainable approach has not only improved my income but also the health of my soil."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Kumar">
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Farmer, Telangana</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+                    <p class="testimonial-content">"The clean water initiative by Chemlox Organics has made a significant difference in our village. Previously, we had to walk miles for clean drinking water. Now, with the water purification system installed by them, our community has access to clean water right here."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Lakshmi Devi">
+                        <div class="author-info">
+                            <h4>Lakshmi Devi</h4>
+                            <p>Village Head, Andhra Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+                    <p class="testimonial-content">"As a small-scale farmer, I never had access to modern agricultural knowledge. The mobile training sessions conducted by Chemlox Organics have opened my eyes to new techniques and organic farming methods that are both profitable and sustainable."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Suresh Patel">
+                        <div class="author-info">
+                            <h4>Suresh Patel</h4>
+                            <p>Small-scale Farmer, Gujarat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
@@ -39,3 +493,20 @@
             <p>&copy; 2023 Chemlox Organics Private Limited. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Mobile Navigation Toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
