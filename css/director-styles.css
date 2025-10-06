@@ -14,12 +14,23 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 30px;
-    background-color: #fff;
+    background: linear-gradient(135deg, #fff, #f0fff5);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.director-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
 }
 
 .director-card:hover {
