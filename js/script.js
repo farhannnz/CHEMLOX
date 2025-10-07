@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
         mirror: false
     });
     
-    // PDF Modal Functionality
-    const pdfModal = document.getElementById('pdfModal');
-    const pdfViewer = document.getElementById('pdfViewer');
-    const closeModal = document.querySelector('.close-modal');
+    // License Modal Functionality
+    const licenseModal = document.getElementById('licenseModal');
+    const licenseModalImage = document.getElementById('licenseModalImage');
+    const closeLicenseModal = document.getElementById('closeLicenseModal');
     
     // Form A2 Card
     const formA2Card = document.getElementById('formA2Card');
     if (formA2Card) {
         formA2Card.addEventListener('click', function() {
-            pdfViewer.src = './pdfs/FERT-M-250225_19082025172817.pdf';
-            pdfModal.style.display = 'block';
+            licenseModalImage.src = './lisence/a2.webp';
+            licenseModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     }
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const formFCard = document.getElementById('formFCard');
     if (formFCard) {
         formFCard.addEventListener('click', function() {
-            pdfViewer.src = './pdfs/FERT-M-250229_12082025111623.pdf';
-            pdfModal.style.display = 'block';
+            licenseModalImage.src = './lisence/f.webp';
+            licenseModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     }
@@ -37,17 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const formOCard = document.getElementById('formOCard');
     if (formOCard) {
         formOCard.addEventListener('click', function() {
-            pdfViewer.src = './pdfs/Chemlox Organics Form O Fnl.pdf';
-            pdfModal.style.display = 'block';
+            licenseModalImage.src = './lisence/o.webp';
+            licenseModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     }
     
-    // Close Modal
-    if (closeModal) {
-        closeModal.addEventListener('click', function() {
-            pdfModal.style.display = 'none';
-            pdfViewer.src = '';
+    // Close License Modal
+    if (closeLicenseModal) {
+        closeLicenseModal.addEventListener('click', function() {
+            licenseModal.classList.remove('active');
             document.body.style.overflow = '';
         });
     }

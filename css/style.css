@@ -1111,7 +1111,7 @@ footer {
 .team-member-image {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
+    
     overflow: hidden;
     margin: 0 auto 1.5rem;
     border: 5px solid var(--light-color);
