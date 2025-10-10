@@ -1,0 +1,159 @@
+.admin-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Login Section */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.login-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.admin-logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.login-form {
+    margin-top: 1.5rem;
+}
+
+.error-message {
+    color: #d9534f;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Dashboard Section */
+.admin-header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+}
+
+.admin-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+}
+
+.admin-logo img {
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.submissions-container {
+    margin-top: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.loading-indicator {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.submissions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.submission-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+}
+
+.submission-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.submission-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.submission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.submission-field {
+    margin-bottom: 0.5rem;
+}
+
+.submission-field strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.submission-message {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .submission-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .submission-message {
+        grid-column: span 1;
+    }
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    display: none;
+}
+
+.form-status .success {
+    color: #28a745;
+}
+
+.form-status .error {
+    color: #dc3545;
+}
+
+.form-status .loading {
+    color: #007bff;
+}

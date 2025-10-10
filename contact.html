@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/contact-form.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -69,6 +75,7 @@
                         <textarea id="message" class="form-control" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div id="formStatus" class="form-status"></div>
                 </form>
             </div>
             <div class="contact-info-card">
@@ -92,6 +99,13 @@
                     <div>
                         <h3>Email</h3>
                         <p>chemloxorganics@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/message/765SKJQTGNYMF1" target="_blank">Connect on WhatsApp</a></p>
                     </div>
                 </div>
                 <div class="contact-info-item">
@@ -195,9 +209,9 @@
             <div class="footer-social">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1BgcHQCnMB/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/chemloxorganics" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/message/765SKJQTGNYMF1" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
@@ -209,5 +223,88 @@
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+    <!-- Inline Firebase Configuration and Form Handling -->
+    <script>
+        // Firebase Configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDQP9AAZHgXR_5Wx_WLwFvNpjLfQWmBVcg",
+            authDomain: "chemlox-contact.firebaseapp.com",
+            projectId: "chemlox-contact",
+            storageBucket: "chemlox-contact.appspot.com",
+            messagingSenderId: "1098979571494",
+            appId: "1:1098979571494:web:b9b5c1e8b5d8b5b5b5b5b5"
+        };
+
+        // Initialize Firebase
+        if (typeof firebase !== 'undefined' && !firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+
+        // Get Firestore instance
+        var db = firebase.firestore();
+
+        // Form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show sending status
+                    formStatus.innerHTML = '<div class="alert alert-info">Sending your message...</div>';
+                    formStatus.style.display = 'block';
+                    
+                    // Get form elements
+                    const nameEl = document.getElementById('name');
+                    const emailEl = document.getElementById('email');
+                    const phoneEl = document.getElementById('phone');
+                    const subjectEl = document.getElementById('subject');
+                    const messageEl = document.getElementById('message');
+                    
+                    // Check if all elements exist
+                    if (!nameEl || !emailEl || !phoneEl || !subjectEl || !messageEl) {
+                        formStatus.innerHTML = '<div class="alert alert-danger">Form elements not found. Please refresh the page and try again.</div>';
+                        return;
+                    }
+                    
+                    // Get form data
+                    const formData = {
+                        name: nameEl.value,
+                        email: emailEl.value,
+                        phone: phoneEl.value,
+                        subject: subjectEl.value,
+                        message: messageEl.value
+                    };
+                    
+                    // Send data directly to Firebase
+                    db.collection("contactSubmissions").add({
+                        name: formData.name,
+                        email: formData.email,
+                        phone: formData.phone,
+                        subject: formData.subject,
+                        message: formData.message,
+                        timestamp: new Date()
+                    })
+                    .then(function(docRef) {
+                        // Show success message
+                        formStatus.innerHTML = '<div class="alert alert-success">Your message has been sent successfully!</div>';
+                        // Reset form
+                        contactForm.reset();
+                    })
+                    .catch(function(error) {
+                        console.error("Error adding document: ", error);
+                        formStatus.innerHTML = '<div class="alert alert-danger">An error occurred. Please try again later.</div>';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

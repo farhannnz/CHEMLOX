@@ -53,9 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close Modal when clicking outside
     window.addEventListener('click', function(event) {
-        if (event.target === pdfModal) {
+        const pdfModal = document.getElementById('pdfModal');
+        if (pdfModal && event.target === pdfModal) {
             pdfModal.style.display = 'none';
-            pdfViewer.src = '';
+            const pdfViewer = document.getElementById('pdfViewer');
+            if (pdfViewer) pdfViewer.src = '';
             document.body.style.overflow = '';
         }
     });

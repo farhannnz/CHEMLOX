@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEMLOX Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Login Section -->
+        <section id="loginSection" class="login-section">
+            <div class="login-box">
+                <h2>CHEMLOX Admin Login</h2>
+                <div class="login-form">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter admin password">
+                    </div>
+                    <button id="loginBtn" class="btn btn-primary">Login</button>
+                    <p id="loginError" class="error-message"></p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Dashboard Section (initially hidden) -->
+        <section id="dashboardSection" class="dashboard-section" style="display: none;">
+            <div class="dashboard-header">
+                <h1>CHEMLOX Admin Dashboard</h1>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
+            
+            <div class="dashboard-content">
+                <h2>Contact Form Submissions</h2>
+                
+                <div id="submissionsLoading" class="loading-indicator">
+                    <i class="fas fa-spinner fa-spin"></i> Loading submissions...
+                </div>
+                
+                <div id="submissionsError" class="error-message" style="display: none;"></div>
+                
+                <div id="submissionsList" class="submissions-list">
+                    <!-- Submissions will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
